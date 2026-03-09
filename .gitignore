@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Pulumi
+.pulumi/
+Pulumi.dev.yaml
+Pulumi.*.yaml
+*.backup
+*.swp
+
