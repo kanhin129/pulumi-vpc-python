@@ -6,7 +6,7 @@ import pulumi_aws as aws
 # 1️⃣ 建立 Key Pair（如果你還沒在 AWS 建立過）
 key_pair = aws.ec2.KeyPair(
     "basic-key",
-    public_key=open("./linha_id_rsa.pub").read()
+    public_key=open("~/.ssh/linha_id_rsa.pub").read()
 )
 
 # 建立一台 EC2
