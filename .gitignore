@@ -13,3 +13,6 @@ Pulumi.*.yaml
 *.backup
 *.swp
 
+
+# mac
+.DS_Store
