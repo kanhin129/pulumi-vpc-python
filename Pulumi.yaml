@@ -1,11 +1,3 @@
-name: pulumi-vpc
-description: AWS VPC example
-runtime:
-  name: python
-  options:
-    toolchain: pip
-    virtualenv: venv
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: aws-python
+name: pulumi-vpc-python
+runtime: python
+description: Simple Pulumi AWS VPC with one public subnet and one EC2 for SSH

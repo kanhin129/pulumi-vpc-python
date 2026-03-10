@@ -1,15 +1,14 @@
-from vpc import public_subnet
-from security import sg
-from ec2 import create_ec2
-import pulumi_aws as aws
+# __main__.py
 
-# 建立 Key Pair（如果你還沒在 AWS 建立過）
-key_pair = aws.ec2.KeyPair(
-    "basic-key",
-    public_key=open("/Users/james/.ssh/linha_id_rsa.pub").read()
-)
+from modules.network import create_network
+from modules.security_group import create_security_group
+from modules.ec2 import create_ec2
 
-# 建立 EC2
-ec21 = create_ec2(public_subnet, sg, key_pair.key_name, instance_name="basic-ec2-1")
+# 建立網路
+vpc, public_subnet = create_network()
 
-# ec22 = create_ec2(public_subnet, sg, key_pair_name, instance_name="basic-ec2-2")
+# Security Group
+sg = create_security_group(vpc)
+
+# EC2
+ec2 = create_ec2(public_subnet, sg)
