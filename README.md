@@ -1,6 +1,5 @@
 # Pulumi AWS VPC 範例專案 (Python)
-
-本專案使用 Pulumi + Python 3.9 在 AWS 上建立一個簡單且完整的 VPC 基礎架構，並透過 Infrastructure as Code (IaC) 的方式管理 AWS 資源。
+使用 Pulumi + Python 3.9 在 AWS 上建立一個簡單的 VPC 基礎架構，透過 Infrastructure as Code (IaC) 的方式管理 AWS 資源。
 
 開發環境為 macOS，並透過 Pulumi 自動部署 AWS Infrastructure。
 
@@ -19,26 +18,6 @@
 - Elastic IP (EIP)
 
 建立完成後 EC2 可以透過 SSH 遠端連線。
-
----
-
-## AWS 架構設計
-
-Internet
-│
-▼
-Internet Gateway
-│
-▼
-VPC (10.0.0.0/16)
-│
-▼
-Public Subnet (10.0.1.0/24)
-│
-├── EC2 Instance
-└── Elastic IP
-
-EC2 部署於 Public Subnet 中，透過 Internet Gateway 提供對外連線能力。
 
 ---
 
@@ -150,11 +129,6 @@ ssh -i ~/.ssh/linha_id_rsa ec2-user@EC2_PUBLIC_IP
 ## 刪除 Infrastructure
 
 pulumi destroy
-
----
-
-
-
 
 ---
 
